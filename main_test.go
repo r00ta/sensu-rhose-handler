@@ -41,7 +41,7 @@ func TestExecuteCheck(t *testing.T) {
 	}))
 
 	oldArgs := os.Args
-	os.Args = []string{"slack", "-w", apiStub.URL}
+	os.Args = []string{"slack", "-w", apiStub.URL, "-c", "exampleId", "-s", "exampleSecret"}
 	defer func() { os.Args = oldArgs }()
 
 	main()
