@@ -13,12 +13,9 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-func TestMain(t *testing.T) {
-}
-
 func TestExecuteCheck(t *testing.T) {
 	assert := assert.New(t)
-	file, _ := ioutil.TempFile(os.TempDir(), "sensu-handler-slack-")
+	file, _ := ioutil.TempFile(os.TempDir(), "sensu-rhose-handler-withoutauth")
 	defer func() {
 		_ = os.Remove(file.Name())
 	}()
@@ -41,7 +38,7 @@ func TestExecuteCheck(t *testing.T) {
 	}))
 
 	oldArgs := os.Args
-	os.Args = []string{"slack", "-w", apiStub.URL, "-c", "exampleId", "-s", "exampleSecret"}
+	os.Args = []string{"slack", "-w", apiStub.URL}
 	defer func() { os.Args = oldArgs }()
 
 	main()
