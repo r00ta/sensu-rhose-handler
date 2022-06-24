@@ -208,7 +208,7 @@ func sendMessage(event *corev2.Event) error {
 	fmt.Printf("Event payload %s\n", string(a))
 
 	req, _ := http.NewRequest("POST", config.rhoseURL, bytes.NewBuffer(a))
-	req.Header.Add("Content-Type", "application/json")
+	req.Header.Add("Content-Type", "application/cloudevents+json")
 	if config.authenticationEnabled == "yes" {
 		req.Header.Add("Authorization", "Bearer "+token)
 	}
