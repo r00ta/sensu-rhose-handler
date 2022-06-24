@@ -13,7 +13,7 @@ import (
 
 	corev2 "github.com/sensu/sensu-go/api/core/v2"
 
-	"github.com/sensu-community/sensu-plugin-sdk/sensu"
+	"github.com/sensu/sensu-plugin-sdk/sensu"
 )
 
 // AccessTokenResponse contains the Authorization response object from keycloak
