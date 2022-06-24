@@ -38,8 +38,8 @@ func TestExecuteCheck(t *testing.T) {
 	}))
 
 	oldArgs := os.Args
-	os.Args = []string{"slack", "--webhook-url", apiStub.URL, "--authentication-enabled", "yes", "--sso-url", "https://sso.redhat.com/auth/realms/redhat-external/protocol/openid-connect/token",
-		"--client-id", "redacted", "--client-secret", "redacted"}
+	os.Args = []string{"slack", "--webhook-url", apiStub.URL, "--authentication-enabled", "no", "--sso-url", "https://sso.redhat.com/auth/realms/redhat-external/protocol/openid-connect/token",
+		"--client-id", "***", "--client-secret", "***"}
 	defer func() { os.Args = oldArgs }()
 
 	main()
