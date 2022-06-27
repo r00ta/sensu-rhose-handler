@@ -193,11 +193,6 @@ func sendMessage(event *corev2.Event) error {
 		return fmt.Errorf("Failed to get token from sso %s", err)
 	}
 
-	token, err = getToken()
-	if err != nil {
-		return fmt.Errorf("Failed to get token from sso %s", err)
-	}
-
 	ce := cloudevents.NewEvent()
 	ce.SetSource("sensu/sensu-rhose-handler")
 	ce.SetType("example.type")
