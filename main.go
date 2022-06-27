@@ -156,6 +156,7 @@ func getToken() (string, error) {
 	}
 
 	if cachedToken != nil { //&& !isJWTTokenExpired(cachedToken.AccessToken) {
+		used = "yes"
 		fmt.Println("CACHED")
 		return cachedToken.AccessToken, nil
 	}
